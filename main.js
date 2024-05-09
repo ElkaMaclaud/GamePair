@@ -64,11 +64,11 @@ function arrayMake(array, len) {
         array.push(i);
     }
     function shuffle(array) {
-        console.log("Я мешаю!!")
+        alert("Я мешаю!!");
         array.sort(() => Math.random() - 0.5);
     };
     shuffle(array)
-    console.log(array)
+    alert(array);
     return array
 }
 function creatArticle(array, len) {
@@ -130,11 +130,11 @@ function gameBegin() {
                     console.log(openArticle.length, listArticle.length, id);
                     if (count > 1) {
                         if (value === listOPen[listOPen.length - 3].children[1].textContent) {
-                            console.log("МОЛОДЕЦ!!!!!!")
+                            alert("МОЛОДЕЦ!")
                             count = 0;
                         }
                         else { 
-                            console.log("Хуй тебе!!!!!!")
+                            alert("Хуй тебе!")
                             for (let i = 2; i <= 3; i++) {
                                 listOPen[listOPen.length - i].classList.remove('card-active')
                             }
@@ -144,7 +144,7 @@ function gameBegin() {
                     value = event.children[1].textContent
                     count++; 
                 if (openArticle.length === listArticle.length) {
-                    console.log(`Game Over`)
+                    alert(`Game Over`)
                     if (checkGame === countGame) {
                         clearTimeout(timer)
                         }
@@ -153,7 +153,6 @@ function gameBegin() {
                     gameContinue(listArticle)
                     }
                 }
-                // console.log(count, value) 
             }  
         });
     });
@@ -200,7 +199,7 @@ function gameReplay(btnWrapper, articles) {
     articles.forEach(function(event) {
         event.remove()
     });
-    console.log('На  меня нажали!!!!');
+    alert("На  меня нажали!!!!");
     console.log(array, len)
     creatArticle(array, len)
 }
